@@ -1,29 +1,31 @@
 import java.util.Scanner;
-import java.text.DecimalFormat;
 public class App1t4 {
     public static void main(String[] args) throws Exception {
         Scanner s = new Scanner(System.in);
-        System.out.println("Introduce la altura de la bandera en cm");
-        int altura = s.nextInt();
-        System.out.println("Ahora introduce el ancho en cm");
-        int ancho = s.nextInt();
-        System.out.println("¿Quieres un bordado en la bandera? (Responde si o no)");
-        String bordado = s.nextLine();
-        int dimensionesbandera = altura*ancho;
-        double preciobandera = dimensionesbandera/100;
-        DecimalFormat df = new DecimalFormat("#.00");
-        if (bordado == "si") {
-            double preciototal = preciobandera + 2.50 + 3.25;
-            System.out.println("Gracias, aquí tiene el desglose de su factura");
-            System.out.println("Bandera de " + dimensionesbandera + "cm2: " + df.format(preciobandera) + "€");
-            System.out.println("Con escudo: 2.50€");
-            System.out.println("Gastos de envío: 3.25€");
-            System.out.println("Precio total: " + preciototal);
-        } else {
-            
+        System.out.println("Dime un día de la semana con la primera en mayúscula para saber qué asignatura toca a primera hora.");
+        String dia = s.nextLine();
+        switch (dia) {
+            case "Lunes":
+                System.out.println("El lunes a primera toca Sistemas Informáticos");
+                break;
+            case "Martes":
+                System.out.println("El Martes a primera toca Sistemas Informáticos");
+                break;
+            case "Miércoles":
+                System.out.println("El Miércoles a primera toca Bases de Datos");
+                break;
+            case "Jueves":
+                System.out.println("El Jueves a primera toca Lenguaje de Marcas");
+                break;
+            case "Viernes":
+                System.out.println("El Viernes a primera toca Bases de Datos");
+            default:
+                System.out.println("Eso no es un día lectivo");
+                break;
         }
-        
-        
-        }
+        s.close();
+
+
     }
+}
 
